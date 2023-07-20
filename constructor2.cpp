@@ -2,19 +2,14 @@
 using namespace std;
 class report
 {
-    private:
     int adno;
     char name[20];
     float marks[5],sum=0,avg;
 
-    float getavg()
-    {
-        return sum/5;
-    }
-
+    
     public:
     
-    void readinfo()
+    report()
     {
         cout<<"enter the admin number:";
         cin>>adno;
@@ -27,13 +22,15 @@ class report
             cin>>marks[i];
             sum=sum+marks[i];
         }
+        avg=sum/5;
 
-        avg=getavg();
-
+        
     }
 
     void displayinfo()
     {
+        
+
         cout<<"\nadmin number:"<<adno;
         cout<<"\nname:"<<name;
         cout<<"\ntotal marks:"<<sum;
@@ -44,6 +41,5 @@ class report
 int main()
 {
     report r;
-    r.readinfo();
     r.displayinfo();
 }
